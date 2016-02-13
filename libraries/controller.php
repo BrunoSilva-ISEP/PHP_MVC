@@ -2,7 +2,8 @@
 /**
 * 
 */
-class Controller
+class Controller extends Object
 {
+	
 	
 }

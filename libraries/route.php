@@ -3,7 +3,7 @@
 /**
 * 
 */
-class Map 
+class Map extends Object
 {
 	public static $path = null;
 
@@ -74,6 +74,11 @@ class Map
 	public static function load_view($controller, $action, $format)
 	{
 		$view_path = APP_PATH. 'views/' . $controller .'/'. $action .'.'. $format . '.php';
+		unset($controller,$action,$format);
+
+		foreach (self::$user_vars as $var => $value) {
+			$$var = $value;
+		}
 		if(file_exists($view_path))
 			include $view_path;
 	}

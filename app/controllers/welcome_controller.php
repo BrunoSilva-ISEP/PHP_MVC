@@ -5,8 +5,8 @@
 class WelcomeController extends AppController
 {
 	
-	function index()
+	public function index()
 	{
-		//DD::e('run');
+		$this->name = "Bruno";
 	}
 }
